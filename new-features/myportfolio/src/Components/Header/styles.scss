@@ -4,4 +4,10 @@
     display: flex;
     justify-content: space-between;
     margin: 2rem;
+    line-height: 1;
+    .logo {
+        font-family: 'Anton';
+        font-size: 2rem;
+        letter-spacing: 0.05rem;
+    }
 }

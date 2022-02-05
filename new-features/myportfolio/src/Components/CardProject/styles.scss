@@ -1,0 +1,94 @@
+@import '../../settings';
+
+#gsoc {
+    background-image: url('../../assets/gsoc-website.png');
+}
+#lbf {
+    background-image: url('../../assets/lbf.png');
+}
+#rahan {
+    background-image: url('../../assets/rahan.jpg');
+}
+#cookbook {
+    background-image: url('../../assets/cookbook.png');
+}
+#search-page {
+    background-image: url('../../assets/search-page.png');
+}
+#ucla {
+    background-image: url('../../assets/ucla-website.png');
+}
+
+.right {
+    height: 80vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+    align-items: center;
+    gap: 2rem;
+    margin: auto;
+
+    .item {
+        height: 40vh;
+        background-position: center top no-repeat;
+        background-size: auto 100%;
+        border-radius: 0.5rem;
+        flex-grow: 1;
+        transition: width 300ms ease;
+        width: 33%;
+        cursor: pointer;
+        position: relative;
+        -webkit-filter: grayscale(100%); 
+        filter: grayscale(100%);
+
+        .vert {
+            position: absolute;
+            width: 15%;
+            bottom: 4rem;
+            left: 0.5rem;
+            transform: rotate(-90deg);
+            transition: opacity 200ms ease;
+        }
+
+        .horiz {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 2rem;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 200ms ease;
+          
+            .topics {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                
+                strong {
+                    font-size: 2rem;
+                    font-weight: normal;
+                    line-height: 1;
+                }
+
+                span {
+                    font-size: 0.6rem;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        &:hover {
+            width: 100%;
+            -webkit-filter: grayscale(0%); 
+            filter: grayscale(0%);
+            animation: toColor 500ms ease;
+        
+            .vert {
+                transform: rotate(0deg);
+            }
+        }
+        
+    }
+}
