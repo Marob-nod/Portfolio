@@ -27,4 +27,13 @@ body {
     100%  { -webkit-filter: grayscale(0%); filter: grayscale(0%); }
 }
 
+@keyframes itemFadeIn {
+    0% {
+        transform: translateX(100%)
+    }
+    100% {
+        transform: translateX(0%)
+    }
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Fraunces&family=Roboto:wght@300&display=swap');

@@ -40,6 +40,14 @@
         position: relative;
         -webkit-filter: grayscale(100%); 
         filter: grayscale(100%);
+        overflow: hidden;       
+
+        &::before {
+            content: '';
+            background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0.0984768907563025) 32%);
+            position: absolute;
+            inset: 0;
+        }
 
         .vert {
             position: absolute;
@@ -89,6 +97,23 @@
                 transform: rotate(0deg);
             }
         }
+
+        &-show {
+            height: 60vh;
+            background-position: center top no-repeat;
+            background-size: auto 100%;
+            border-radius: 0.5rem;
+            flex-grow: 2;
+            transition: width 300ms ease;
+            width: 370%;
+            cursor: pointer;
+            position: relative;
+            -webkit-filter: grayscale(100%); 
+            filter: grayscale(100%);
+            overflow: hidden;       
+    
+        }
         
     }
 }
+

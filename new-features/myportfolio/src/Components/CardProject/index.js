@@ -1,8 +1,11 @@
 import './styles.scss'
+import react from 'react'
+import { useState } from 'react'
 
-function CardProject({ name, id }) {
+function CardProject({ name, id, handleClick, isClicked }) {
+
     return (
-        <div className="item" id={id}>
+        <div className={isClicked ? 'item-show' : 'item'} id={id} onClick={(id) => handleClick()} >
             <div className="vert">{name}</div>
             <div className="horiz">
                 <span className='name'>{name}</span>
