@@ -1,10 +1,10 @@
 import './styles.scss'
 
 
-function CardProject({ name, id, handleClick, isClicked }) {
+function CardProject({ name, handleClick, currentProject }) {
 
     return (
-        <div className={isClicked ? 'item-show' : 'item'} id={id} onClick={() => handleClick(id)} >
+        <div className={currentProject === name ? 'item-show' : 'item'} id={name} onClick={() => handleClick(name)} >
             <div className="vert">{name}</div>
             <div className="horiz">
                 <span className='name'>{name}</span>
