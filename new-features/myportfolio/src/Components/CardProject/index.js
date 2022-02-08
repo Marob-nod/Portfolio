@@ -1,10 +1,12 @@
+import { useRef } from 'react'
 import './styles.scss'
 
 
-function CardProject({ name, handleClick, currentProject, title, techs, link, description }) {
-
+function CardProject({ name, handleClick, currentProject, title, techs, link, description, handleClickOut }) {
+    const wrapperRef = useRef(null)
+    handleClickOut(wrapperRef)
     return (
-        <div className={currentProject === name ? 'item-show' : 'item'} id={name} onClick={() => handleClick(name)} >
+        <div className={currentProject === name ? 'item-show' : 'item'} id={name} onClick={() => handleClick(name)} ref={wrapperRef}>
             {currentProject === name ?
                 <div className="banner-top">
                     <div className='title'>
@@ -15,7 +17,6 @@ function CardProject({ name, handleClick, currentProject, title, techs, link, de
                     </a>
                 </div> : ''
             }
-
             {currentProject === name ?
                 <div className="banner-bottom">
                     <div className='description'>

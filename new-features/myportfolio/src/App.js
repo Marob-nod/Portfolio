@@ -3,7 +3,7 @@ import './App.scss';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import CardProject from './Components/CardProject';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 
@@ -21,13 +21,28 @@ function App() {
     SetCurrentProject(name)
   }
 
+  function useOutsideProject(ref) {
+    useEffect(() => {
+      function handleClickOutside(event) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          console.log('You clcked outside !')
+          SetCurrentProject('')
+        }
+      }
+      document.addEventListener("mousedown", handleClickOutside)
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside)
+      }
+    }, [ref])
+  }
+
   return (
     <div className="App">
       <Header />
       <main>
         <div className="right">
           {projects.map(project =>
-            <CardProject {...project} currentProject={currentProject} handleClick={handleClick} />
+            <CardProject {...project} currentProject={currentProject} handleClick={handleClick} handleClickOut={useOutsideProject} />
           )}
         </div>
       </main>

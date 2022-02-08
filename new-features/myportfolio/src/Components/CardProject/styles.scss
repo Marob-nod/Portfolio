@@ -106,14 +106,16 @@
         border-radius: 0.5rem;
         flex-grow: 2;
         position: relative;
+        transition: width ease 500ms;
 
         .banner-top {
             position: absolute;
-            top: -2.5rem;
+            top: -5rem;
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            animation: itemFadeOut 600ms forwards;
 
             .title {
                 font-family: 'Anton';
@@ -132,10 +134,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            animation: itemFadeIn 1000ms forwards;
 
             .description {
-                width: 50%;
+                width: 30rem;
+                
             }
+            
         }
     }
 }
